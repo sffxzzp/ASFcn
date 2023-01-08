@@ -1,0 +1,22 @@
+{
+    local_certs
+    ocsp_stapling off
+}
+
+https://steamcommunity.com, https://www.steamcommunity.com, https://cdn.steamcommunity.com, https://store.steampowered.com, https://api.steampowered.com {
+    tls {
+        issuer internal {
+            lifetime 7d
+        }
+        on_demand
+    }
+    reverse_proxy * https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://eaassets-a.akamaihd.net {
+        lb_policy random
+        transport http {
+            tls
+            tls_insecure_skip_verify
+        }
+        fail_duration 10s
+        health_timeout 30s
+    }
+}
