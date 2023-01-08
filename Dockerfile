@@ -8,7 +8,6 @@ RUN apt update && apt install -y curl debian-keyring debian-archive-keyring apt-
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list
 RUN apt update && apt install caddy && rm -rf /var/lib/apt/lists/*
-RUN echo '127.0.0.1 steamcommunity.com www.steamcommunity.com' >> /etc/hosts
 
 EXPOSE 1242
 WORKDIR /app

@@ -34,4 +34,4 @@ jobs:
           [ "$VERSION" == "main" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
-          docker buildx build --platform linux/amd64,linux/arm64 -t $IMAGE_ID:$VERSION --push .
+          docker buildx build --platform linux/amd64,linux/arm64 -t $IMAGE_ID:$VERSION --add-host=steamcommunity.com:127.0.0.1 --add-host=www.steamcommunity.com:127.0.0.1 --push .
