@@ -1,14 +1,20 @@
 {
     local_certs
     ocsp_stapling off
+    pki {
+        ca {
+            # only available after caddy v2.6.3
+            intermediate_lifetime 1800d
+        }
+    }
 }
 
 https://steamcommunity.com, https://www.steamcommunity.com, https://cdn.steamcommunity.com, https://store.steampowered.com, https://api.steampowered.com {
     tls {
         issuer internal {
-            lifetime 7d
+            lifetime 1800d
         }
-        on_demand
+        # on_demand
     }
     reverse_proxy * https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://eaassets-a.akamaihd.net {
         lb_policy random
