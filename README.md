@@ -21,7 +21,13 @@ ArchiSteamFarm（简称为 ASF），但使用 Caddy 作为 Steam 社区的反代
 使用在线镜像，保持程序在后台运行：
 
 ``` shell
-docker run -d --name asf -p 1242:1242 -v ~/asf/config:/app/config -v ~/asf/logs:/app/logs sffxzzp/asfcn:latest
+docker run -d --name asf -p 1242:1242 -v ~/asf/config:/app/config -v ~/asf/logs:/app/logs --rm sffxzzp/asfcn:latest
+```
+
+或者，在前台运行：
+
+``` shell
+docker run -it --name asf -p 1242:1242 -v ~/asf/config:/app/config -v ~/asf/logs:/app/logs --rm sffxzzp/asfcn:latest
 ```
 
 或者，克隆仓库后用 `Dockerfile` 自行构建镜像（可省略，省略后会自动拉取在线仓库）：

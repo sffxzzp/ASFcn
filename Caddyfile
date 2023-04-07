@@ -12,7 +12,8 @@
 https://steamcommunity.com, https://www.steamcommunity.com, https://cdn.steamcommunity.com, https://store.steampowered.com, https://api.steampowered.com {
     tls {
         issuer internal {
-            lifetime 1800d
+			# more than 1 year may cause some problems
+            lifetime 360d
         }
         # on_demand
     }
