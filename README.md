@@ -10,6 +10,15 @@ ArchiSteamFarm（简称为 ASF），但使用 Caddy 作为 Steam 社区的反代
 
 准备好 ASF 配置文件，放置于 `~/asf/config` 目录下即可。
 
+### Docker 仓库
+
+由 GitHub Actions 推送至 Docker Hub 和 GitHub Container Registry，拉取时可互相替换。
+
+```
+sffxzzp/asfcn:latest
+ghcr.io/sffxzzp/asfcn:latest
+```
+
 ### 运行
 
 参数中，`-d` 是保持后台，`--name` 是镜像名称，用于此后的管理，`-p` 后面是端口映射，两个 `-v` 是目录对宿主机的映射
