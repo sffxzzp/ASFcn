@@ -11,10 +11,10 @@ RUN apt update && apt install caddy && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 1242
 WORKDIR /app
-COPY Caddyfile /app
-COPY entrypoint.sh /app
-COPY IPC.config /app/config
+COPY Caddyfile /app/
+COPY entrypoint.sh /app/
+COPY IPC.config /app/config/
 
-VOLUME ["/app/config", "/app/logs"]
+# VOLUME ["/app/config/", "/app/logs/"]
 HEALTHCHECK CMD ["pidof", "-q", "dotnet"]
 ENTRYPOINT ["/bin/bash", "/app/entrypoint.sh"]
