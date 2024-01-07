@@ -13,8 +13,6 @@ EXPOSE 1242
 WORKDIR /app
 COPY Caddyfile /app/
 COPY entrypoint.sh /app/
-COPY IPC.config /app/config/
 
-# VOLUME ["/app/config/", "/app/logs/"]
 HEALTHCHECK CMD ["pidof", "-q", "dotnet"]
 ENTRYPOINT ["/bin/bash", "/app/entrypoint.sh"]
