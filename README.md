@@ -10,6 +10,8 @@ ArchiSteamFarm（简称为 ASF），但使用 Caddy 作为 Steam 社区的反代
 
 之后执行代码即可。
 
+默认 IPC 密码为：`asfcnasfcn`
+
 ### Docker 仓库
 
 由 GitHub Actions 推送至 Docker Hub 和 GitHub Container Registry，拉取时可互相替换。
@@ -30,13 +32,13 @@ ghcr.io/sffxzzp/asfcn:latest
 使用在线镜像，保持程序在后台运行：
 
 ``` shell
-docker run --user $(id -u):$(id -g) -d --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/app/logs --rm sffxzzp/asfcn:latest
+docker run -d --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/app/logs --rm sffxzzp/asfcn:latest
 ```
 
 或者，在前台运行（可以开个 screen，然后运行）：
 
 ``` shell
-docker run --user $(id -u):$(id -g) -it --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/app/logs --rm sffxzzp/asfcn:latest
+docker run -it --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/app/logs --rm sffxzzp/asfcn:latest
 ```
 
 或者，克隆仓库后用 `Dockerfile` 自行构建镜像（可省略，省略后会自动拉取在线仓库）：
