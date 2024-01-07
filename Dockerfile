@@ -14,5 +14,5 @@ WORKDIR /app
 COPY Caddyfile /app/
 COPY entrypoint.sh /app/
 
-HEALTHCHECK CMD ["pidof", "-q", "dotnet"]
+HEALTHCHECK CMD ["pidof", "-q", "ArchiSteamFarm"]
 ENTRYPOINT ["/bin/bash", "/app/entrypoint.sh"]
