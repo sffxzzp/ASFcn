@@ -47,4 +47,6 @@ docker run -it --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/
 docker build -t sffxzzp/asfcn:latest .
 ```
 
+如果需要前置 nginx 的话，可以用 `-p 127.0.0.1:1242:1242`，使其只允许本机访问。
+
 运行之后，将 ASF 的各种配置文件放入 `config` 目录即可。
