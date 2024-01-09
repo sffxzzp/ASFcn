@@ -17,7 +17,7 @@ https://steamcommunity.com, https://www.steamcommunity.com, https://cdn.steamcom
         }
         # on_demand
     }
-    reverse_proxy * https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://eaassets-a.akamaihd.net {
+    reverse_proxy * https://s.team https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://eaassets-a.akamaihd.net {
         lb_policy random
         transport http {
             tls
@@ -25,5 +25,19 @@ https://steamcommunity.com, https://www.steamcommunity.com, https://cdn.steamcom
         }
         fail_duration 10s
         health_timeout 30s
+    }
+}
+
+https://*.github.com, https://github.io, https://*.github.io, https://githubusercontent.com, https://*.githubusercontent.com {
+    import sign
+    reverse_proxy * https://github.map.fastly.net {
+        import rev
+    }
+}
+
+https://gist.github.com https://github.com {
+    import sign
+    reverse_proxy * https://140.82.113.3 https://140.82.113.4 https://20.205.243.166 https://20.27.177.113 {
+        import rev
     }
 }
