@@ -1,6 +1,7 @@
 name: docker
 
 on:
+  push:
   repository_dispatch:
     types: [build-on-demand]
   workflow_dispatch:
