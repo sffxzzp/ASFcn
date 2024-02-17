@@ -32,7 +32,7 @@ ghcr.io/sffxzzp/asfcn:latest
 使用在线镜像，保持程序在后台运行：
 
 ``` shell
-docker run -d --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/app/logs --rm sffxzzp/asfcn:latest
+docker run -d --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/app/logs sffxzzp/asfcn:latest
 ```
 
 或者，在前台运行（可以开个 screen，然后运行）：
