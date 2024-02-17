@@ -10,7 +10,7 @@ ArchiSteamFarm（简称为 ASF），但使用 Caddy 作为 Steam 社区的反代
 
 之后执行代码即可。
 
-默认 IPC 密码为：`asfcnasfcn`
+**默认 IPC 密码为：`asfcnasfcn`**
 
 ### Docker 仓库
 
@@ -47,6 +47,10 @@ docker run -it --name asf -p 1242:1242 -v $PWD/config:/app/config -v $PWD/logs:/
 docker build -t sffxzzp/asfcn:latest .
 ```
 
+### 运行之后
+
 如果需要前置 nginx 的话，可以用 `-p 127.0.0.1:1242:1242`，使其只允许本机访问。
+
+第一次运行，会自动在 `config` 目录下创建 `ASF.json` 以及 `IPC.config`，以确保启动之后可以直接使用 IPC。
 
 运行之后，将 ASF 的各种配置文件放入 `config` 目录即可。
