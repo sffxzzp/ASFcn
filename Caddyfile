@@ -36,14 +36,14 @@ https://steamcommunity.com, https://www.steamcommunity.com, https://cdn.steamcom
     }
 }
 
-https://github.com, https://*.github.com {
+https://gist.github.com, https://github.com {
     import sign
     reverse_proxy * https://140.82.113.3 https://140.82.113.4 https://20.205.243.166 https://20.27.177.113 {
         import rev
     }
 }
 
-https://github.io, https://*.github.io, https://githubusercontent.com, https://*.githubusercontent.com {
+https://*.github.com, https://github.io, https://*.github.io, https://githubusercontent.com, https://*.githubusercontent.com {
     import sign
     reverse_proxy * https://github.map.fastly.net {
         import rev
