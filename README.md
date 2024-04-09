@@ -1,4 +1,6 @@
-# ASFcn
+# ASFcn 
+
+[![Docker Pulls](https://badgen.net/docker/pulls/sffxzzp/asfcn?icon=docker&label=pulls)](https://hub.docker.com/r/sffxzzp/asfcn/)
 
 ArchiSteamFarm（简称为 ASF），但使用 Caddy 作为 Steam 社区的反代，自动生成并信任根证书。
 
