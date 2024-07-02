@@ -35,6 +35,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to Aliyun Registry
+        uses: docker/login-action@v3
+        with:
+          registry: registry.cn-hangzhou.aliyuncs.com
+          username: ${{ secrets.ALIYUN_REGISTRY_USER }}
+          password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
@@ -44,3 +50,4 @@ jobs:
           tags: |
             sffxzzp/asfcn:latest
             ghcr.io/sffxzzp/asfcn:latest
+            registry.cn-hangzhou.aliyuncs.com/sffxzzp/asfcn:latest
