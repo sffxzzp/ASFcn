@@ -16,11 +16,12 @@ ArchiSteamFarm（简称为 ASF），但使用 Caddy 作为 Steam 社区的反代
 
 ### Docker 仓库
 
-由 GitHub Actions 推送至 Docker Hub 和 GitHub Container Registry，拉取时可互相替换。
+由 GitHub Actions 推送至 Docker Hub、GitHub Container Registry 以及阿里云容器镜像服务，拉取时可互相替换。
 
 ```
 sffxzzp/asfcn:latest
 ghcr.io/sffxzzp/asfcn:latest
+registry.cn-hangzhou.aliyuncs.com/sffxzzp/asfcn:latest
 ```
 
 ### 运行
