@@ -1,4 +1,4 @@
-echo '127.0.0.1 steamcommunity.com www.steamcommunity.com store.steampowered.com github.com' >> /etc/hosts
+echo '127.0.0.1 steamcommunity.com www.steamcommunity.com store.steampowered.com api.steampowered.com github.com' >> /etc/hosts
 if [ ! -f "/app/config/IPC.config" ]; then
     echo '{"Kestrel":{"Endpoints":{"HTTP":{"Url":"http://*:1242"}}}}' >> /app/config/IPC.config
 fi
