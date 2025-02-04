@@ -6,4 +6,4 @@ if [ ! -f "/app/config/ASF.json" ]; then
     echo '{"IPCPassword":"asfcnasfcn","UpdateChannel": 0,"UpdatePeriod": 0,"Statistics": false}' >> /app/config/ASF.json
 fi
 caddy start --config /app/Caddyfile
-bash /asf/ArchiSteamFarm-Service.sh --no-restart --process-required --system-required
+bash /asf/ArchiSteamFarm-Service.sh --no-restart --system-required
