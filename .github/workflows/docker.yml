@@ -41,7 +41,7 @@ jobs:
           registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.ALIYUN_REGISTRY_USER }}
           password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
-      - name: Build and Push
+      - name: Build and Push to DockerHub and GHCR
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -50,4 +50,13 @@ jobs:
           tags: |
             sffxzzp/asfcn:latest
             ghcr.io/sffxzzp/asfcn:latest
+      - name: Push to Aliyun Registry
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          provenance: false
+          sbom: false
+          tags: |
             registry.cn-hangzhou.aliyuncs.com/sffxzzp/asfcn:latest
